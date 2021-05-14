@@ -1,6 +1,6 @@
 
 import click
-from cli.commands import database, table, utils
+from cli.commands import database, table, helper, ddbquery
 
 @click.group()
 def main():
@@ -11,4 +11,5 @@ def main():
 
 main.add_command(database.database)
 main.add_command(table.table)
-main.add_command(utils.utils)
+main.add_command(helper.helper)
+main.add_command(ddbquery.ddbquery)

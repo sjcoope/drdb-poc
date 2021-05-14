@@ -1,7 +1,9 @@
 import click
 from cli.proxies import drfs, drdb
+from cli.utils import utils
 
 # CREATE-TABLE: python app.py table create -n table1 -db database-simon-1 -dr drfs-drive-org-simonorg1
+# GET-TABLES: python app.py table get-all -db database-simon-1
 
 @click.group()
 def table():
@@ -38,4 +40,6 @@ def cmd_get_table(db_name, table_name):
 @table.command("get-all")
 @click.option("-db", "--db_name")
 def cmd_get_tables(db_name):
-    print('todo')
+    results = drdb.get_tables(db_name)
+    print(utils.to_json(results))
+
