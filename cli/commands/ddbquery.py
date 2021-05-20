@@ -11,7 +11,7 @@ table = dynamodb.Table(tablename)
 @click.group()
 def ddbquery():
     """
-    CLI commands
+    CLI commands for example DDB queries.
     """
     pass
 

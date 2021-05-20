@@ -9,6 +9,7 @@ import boto3
 from botocore.exceptions import ClientError
 import time
 
+# Example Commands:
 # CREATE-TABLE: python app.py helper add-table-data -n table1 -db database-simon-1 -dr drfs-drive-org-simonorg1 -fc 10 -rc 50
 # CREATE-DDB-TABLE: python app.py helper create-ddb-table -n table1
 
@@ -118,4 +119,3 @@ def create_ddb_table_data(table_name):
     ddb_utils.apply_table_data(table_name, table_data)
 
     print('Operation complete!')
-

@@ -1,0 +1,12 @@
+{
+    "bucketName":"spark-kube1",
+    "keyPrefix":"cust1/databases/db1/ratings/raw/",
+    "sourceFormat":"csv",
+    "writeFormats":"parquet",
+    "writeMode":"overwrite",
+    "readerOptions":"header=true,inferSchema=true,delimiter=\\t",
+    "targetLocation":"s3://spark-kube1/cust1/databases/db1/ratings/processed",
+    "databaseName": "database_1",
+    "tableName": "processed.ratings_new",
+    "importType": "DATABASE | TABLE"
+}

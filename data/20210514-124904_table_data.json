@@ -664,7 +664,7 @@
             "Item": {
                 "description": "Perferendis tempore nihil asperiores dignissimos dolorum, repudiandae similique et nisi quis exercitationem voluptatem nostrum suscipit, voluptatem nisi non, fugit accusantium molestias illo quis.",
                 "createdDate": "2021-03-05-T19:44:02Z",
-                "type": "ERROR",
+                "type": "INPROGRESS",
                 "pk": "event#15",
                 "sk": "job#4",
                 "data": "event#2021-03-05-T19:44:02Z"
