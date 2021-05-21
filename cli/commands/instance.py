@@ -4,8 +4,8 @@ from cli.utils import utils
 
 # EXAMPLE COMMANDS
 # ----------------------
-# CREATE-INSTANCE: python app.py instance create -dr drfs-drive-main-2 -r Org123
-# GET-INSTNACE: python app.py instance get -dr drfs-drive-main-2
+# CREATE-INSTANCE: python app.py instance create -dr drfs-drive-2 -r Org123
+# GET-INSTNACE: python app.py instance get -dr drfs-drive-2
 
 @click.group()
 def instance():

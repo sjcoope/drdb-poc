@@ -45,7 +45,7 @@ def cmd_get_table(drive_id, db_name, table_name):
     if(table_name is not None):
         results = drdb.get_table(drive_id, db_name, table_name)
     else:
-        results = drdb.get_tables_from_catalog(drive_id, db_name)
+        results = drdb.get_tables(drive_id, db_name)
 
     print(utils.to_json(results))
 

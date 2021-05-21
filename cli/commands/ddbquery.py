@@ -4,7 +4,7 @@ from cli.utils import utils
 import argparse
 import click
 
-tablename = "drdb-state"
+tablename = "drdb-state-example"
 dynamodb = boto3.resource("dynamodb", region_name="ap-southeast-2")
 table = dynamodb.Table(tablename)
 

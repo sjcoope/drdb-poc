@@ -3,7 +3,7 @@ from boto3.dynamodb.conditions import Key
 import click
 from cli.utils import utils
 
-tablename = "drdb-state"
+tablename = "drdb-state-example"
 dynamodb = boto3.resource("dynamodb", region_name="ap-southeast-2")
 table = dynamodb.Table(tablename)
 
@@ -28,6 +28,7 @@ def cmd_get_jobs(database_id, table_id):
         response = table.query(IndexName="gsi_1", KeyConditionExpression=Key("sk").eq("database#"+database_id) & Key("data").begins_with("job"))
     else:
         response = table.query(IndexName="gsi_1", KeyConditionExpression=Key("sk").eq("table#"+table_id) & Key("data").begins_with("job"))
+        print(response)
 
     print(utils.to_json(response["Items"]))
 

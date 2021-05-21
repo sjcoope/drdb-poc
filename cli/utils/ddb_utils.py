@@ -22,6 +22,8 @@ def create_sample_data():
     event_types = ['ERROR', 'WARNING', 'INFO']
     event_type_count = 3
     entity_status_count = 5
+
+    # Test Data Volumes
     instance_count = 50
     database_count = 500
     table_count = 10000
@@ -36,9 +38,10 @@ def create_sample_data():
     events = []
 
     for i in range(1, instance_count + 1):
+        drive_id = "drfs-drive-" + str(i)
         instances.append({
-            "id": str(i),
-            "name": sd.words(1, 3),
+            "id": drive_id,
+            "driveId": drive_id,
             "createdDate": sd.datetime_between(min_datetime, max_datetime),
             "resourceId": str(sd.number(5))
         })
@@ -109,7 +112,7 @@ def clean_types(instances, databases, tables, jobs, events):
 
 def build_adjacency_lists(instances, databases, tables, jobs, events):
     lists = []
-    lists += build_node_list(instances, "id", "instance", "resourceId", "resource", "instance#createdDate")
+    lists += build_node_list(instances, "id", "instance", "resourceId", "instance", "instance#createdDate")
     lists += build_node_list(databases, "id", "database", "instanceId", "instance", "database#name")
     lists += build_node_list(tables, "id", "table", "databaseId", "database", "table#name")
     lists += build_node_list(jobs, "id", "job", "entityId", "entityType", "job#createdDate")
